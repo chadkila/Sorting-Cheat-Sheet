@@ -31,15 +31,17 @@ public class QuickSort {
 		int cur = num[r];
 		int i = p;
 		// iteratively finding elements smaller than pivot
+		// from left to right
 		for (int j = p; j < r; j++) {
 			if (num[j] <= cur) {
-				i++;
 				// move smaller elements to the left
-				swap(num, i - 1, j);
+				swap(num, i, j);
+				i++;
 			}
 		}
 		// swap pivot
 		swap(num, i, r);
+		// left side of i are smaller than pivot
 		return i;
 	}
 
